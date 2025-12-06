@@ -1,14 +1,13 @@
 "use client";
 
 import {
-  ArrowRightIcon,
   Award,
   BadgePercent,
   Building2,
   UserStar,
 } from "lucide-react";
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
-import Link from "next/link";
+
 
 const featureCards = [
   {

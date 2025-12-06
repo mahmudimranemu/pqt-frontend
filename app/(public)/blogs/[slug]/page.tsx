@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
             title: `${blog.title.rendered} - Property Quest Turkey`,
             description: blog.excerpt.rendered.replace(/<[^>]+>/g, "").slice(0, 160),
         };
-    } catch (error) {
+    } catch {
         return {
             title: "Blog Not Found",
         };
@@ -30,7 +30,7 @@ export default async function BlogPage({ params }: Props) {
     let blog;
     try {
         blog = await fetchBlogBySlug(slug);
-    } catch (error) {
+    } catch {
         notFound();
     }
 

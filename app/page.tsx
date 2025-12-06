@@ -2,7 +2,7 @@ import HeroSlider from "@/components/HeroSlider";
 import AboutPQTSection from "@/components/home/AboutPQTSection";
 import CitizenshipCTASection from "@/components/home/CitizenshipCTASection";
 import { CitySection } from "@/components/home/CitySection";
-import { ContactCTASection } from "@/components/home/ContactCTASection";
+
 import DreamHomeCTASection from "@/components/home/DreamHomeCTASection";
 import HomeCTAForm from "@/components/home/HomeCTAForm";
 import InvestCTASection from "@/components/home/InvestCTASection";

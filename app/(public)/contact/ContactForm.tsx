@@ -16,7 +16,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -62,7 +61,7 @@ export default function FullContactForm() {
         },
       });
       reset();
-    } catch (error) {
+    } catch {
       toast.error("Error submitting form. Please try again.");
     }
   };
