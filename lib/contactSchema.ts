@@ -8,7 +8,8 @@ export const subjectOptions = [
 ] as const; // 'as const' for TypeScript inference
 // Simple form schema (home page)
 export const simpleContactSchema = z.object({
-  name: z.string().min(1, "Name is required").max(100),
+  name: z.string().min(1, "First Name is required").max(100),
+  surname: z.string().min(1, "Surname is required").max(100),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(1, "Phone is required").max(20),
   pageUrl: z.string().optional(),

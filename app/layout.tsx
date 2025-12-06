@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -21,11 +22,13 @@ export const metadata: Metadata = {
   description: "Turkish Citizenship by Investment Programme",
 };
 
-export default function RootLayout({
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang='en'>
       <body

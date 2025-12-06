@@ -1,4 +1,5 @@
 // app/property/[slug]/page.tsx
+
 import { notFound } from "next/navigation";
 import { fetchPropertyBySlug } from "@/lib/wpapi";
 import { Metadata } from "next";
@@ -25,6 +26,7 @@ import {
 import Link from "next/link";
 import PropertyImageSlider from "@/components/properties/property/PropertyImageSlider";
 import FullContactForm from "../../contact/ContactForm";
+import PropertiesCarousel from "@/components/properties/PropertiesCarousel";
 
 interface Props {
   params: { slug: string };
@@ -256,13 +258,13 @@ export default async function PropertyPage({ params }: Props) {
               Similar properties
             </h3>
             <Link
-              href='#'
+              href='/properties'
               className='flex font-semibold text-secondary items-center gap-2'>
               Explore Properties
               <ArrowRight size={16} />
             </Link>
           </div>
-          {/* <PropertiesCarousel /> */}
+          <PropertiesCarousel />
         </div>
       </div>
     </>

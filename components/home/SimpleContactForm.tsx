@@ -9,6 +9,12 @@ import {
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "../ui/input-group";
+import { ArrowRight, Mail, Phone, User } from "lucide-react";
 
 export default function SimpleContactForm() {
   const {
@@ -57,39 +63,69 @@ export default function SimpleContactForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className='flex flex-col lg:flex-row gap-4'>
-      <div>
-        <Input
+      <InputGroup className='bg-white rounded-sm h-12 text-zinc-900'>
+        <InputGroupInput
           id='name'
           {...register("name")}
           placeholder='Name'
-          className='bg-white rounded-md h-12 text-zinc-900 shadow-md'
         />
+        <InputGroupAddon>
+          <User />
+        </InputGroupAddon>
         {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
-      </div>
-      <div>
-        <Input
+      </InputGroup>
+
+      <InputGroup className='bg-white rounded-sm h-12 text-zinc-900'>
+        <InputGroupInput
+          id='surname'
+          {...register("surname")}
+          placeholder='Surname'
+        />
+        <InputGroupAddon>
+          <User />
+        </InputGroupAddon>
+        {errors.surname && (
+          <p className='text-red-500'>{errors.surname.message}</p>
+        )}
+      </InputGroup>
+
+      <InputGroup className='bg-white rounded-sm h-12 text-zinc-900'>
+        <InputGroupInput
           id='email'
           type='email'
           placeholder='Email'
           {...register("email")}
-          className='bg-white rounded-md h-12 text-zinc-900 shadow-md'
         />
+        <InputGroupAddon>
+          <Mail />
+        </InputGroupAddon>
         {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
-      </div>
-      <div>
-        <Input
+      </InputGroup>
+
+      <InputGroup className='bg-white rounded-sm h-12 text-zinc-900'>
+        <InputGroupInput
           id='phone'
           {...register("phone")}
           placeholder='Phone'
-          className='bg-white rounded-md h-12 text-zinc-900 shadow-md'
         />
+        <InputGroupAddon>
+          <Phone />
+        </InputGroupAddon>
         {errors.phone && <p className='text-red-500'>{errors.phone.message}</p>}
-      </div>
+      </InputGroup>
+
       <Button
         type='submit'
         disabled={isSubmitting}
         className='bg-red-600 hover:bg-red-700 text-white h-12 px-8 font-semibold text-lg cursor-pointer'>
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? (
+          "Submitting..."
+        ) : (
+          <>
+            Contact
+            <ArrowRight />
+          </>
+        )}
       </Button>
     </form>
   );

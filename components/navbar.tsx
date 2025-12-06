@@ -10,6 +10,7 @@ const menuItems = [
   { label: "Buy Real Estate", href: "/properties" },
   { label: "Turkish Citizenship", href: "/turkishcitizenship" },
   { label: "Buyer Guide", href: "/buyerguide" },
+  { label: "Blogs", href: "/blogs" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

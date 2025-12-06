@@ -31,8 +31,8 @@ const propertiesLinks = [
 export default function Footer() {
   return (
     <footer className='flex flex-col items-start p-6 w-full border-t [border-top-style:solid] border-[#e1e3ec] bg-[linear-gradient(0deg,rgba(0,20,48,0.95)_0%,rgba(0,20,48,0.95)_100%)]'>
-      <div className='flex flex-col items-start gap-10 py-8 w-full'>
-        <div className='flex flex-col lg:flex-row items-end justify-between pb-10 gap-6 w-full border-b [border-bottom-style:solid] border-[#e1e3ec]'>
+      <div className='flex flex-col items-start mx-auto gap-10 py-8 w-7xl'>
+        <div className='flex flex-col lg:flex-row items-end mx-auto justify-between pb-10 gap-6 w-7xl border-b [border-bottom-style:solid] border-[#e1e3ec]'>
           <div className='flex flex-col items-start'>
             <div className='inline-flex flex-col items-center justify-center '>
               <Link href='/'>
@@ -70,7 +70,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className='flex flex-col lg:flex-row items-start gap-8 justify-between w-full'>
+        <div className='flex flex-col lg:flex-row items-start gap-8 justify-between w-7xl mx-auto'>
           <nav className='inline-flex flex-col items-start gap-4 lg:gap-8'>
             <h4 className=' text-white font-semibold'>About us</h4>
 
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className='flex items-center justify-center gap-2.5 px-0 py-6 w-full border-t [border-top-style:solid] border-[#e1e3ec]'>
+      <div className='flex items-center justify-center gap-2.5 px-0 py-6 w-7xl mx-auto border-t [border-top-style:solid] border-[#e1e3ec]'>
         <p className='w-fit'>
           <span className='text-[#b3b8c8] leading-[var(--display-3-regular-line-height)] font-display-3-regular [font-style:var(--display-3-regular-font-style)] font-[number:var(--display-3-regular-font-weight)] tracking-[var(--display-3-regular-letter-spacing)] text-[length:var(--display-3-regular-font-size)]'>
             Copyright © 2025{" "}

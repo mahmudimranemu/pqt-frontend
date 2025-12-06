@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 interface HeaderProps {
   title: string;
-  backgroundImage: string;
+  backgroundImage?: string;
   description: string;
 }
 const PageHeader: React.FC<HeaderProps> = ({
@@ -14,7 +14,7 @@ const PageHeader: React.FC<HeaderProps> = ({
   return (
     <header
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
       }}
       className='w-full lg:h-[70vh] lg:pt-0 pt-32 bg-cover bg-center items-end pb-20 flex justify-center relative overflow-hidden'>
       {/* Overlay */}

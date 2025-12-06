@@ -47,6 +47,8 @@
   --color-dark-blue: #00265c;
   --color-heading: #393939;
   --color-text: #404040;
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary-soft: var(--secondary-soft);
 }
 
 body {
@@ -88,6 +90,40 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ===========================
+     BRAND COLORS — OKLCH
+  =========================== */
+
+  /* Primary Red — #E01F26 */
+  --primary: oklch(60% 0.23 29);
+  --primary-dark: oklch(52% 0.22 29);
+  --primary-soft: oklch(93% 0.04 29);
+
+  /* Secondary Navy — #233D7F */
+  --secondary: oklch(40% 0.12 255);
+  --secondary-dark: oklch(32% 0.1 255);
+  --secondary-soft: oklch(94% 0.03 255);
+
+  /* ===========================
+     NEUTRAL UI COLORS
+  =========================== */
+
+  --section-bg: oklch(97% 0.01 250); /* #F6F8FC */
+  --card-bg: oklch(100% 0 0);
+
+  --border: oklch(90% 0.01 250); /* #E5E7EB */
+
+  --text-primary: oklch(20% 0.02 265); /* #111827 */
+  --text-muted: oklch(55% 0.02 265); /* #6B7280 */
+
+  /* ===========================
+     ACCENT COLORS
+  =========================== */
+
+  --success: oklch(62% 0.18 145); /* #16A34A */
+  --warning: oklch(75% 0.16 85); /* #F59E0B */
+  --info: oklch(62% 0.14 230); /* #0284C7 */
 }
 
 .dark {

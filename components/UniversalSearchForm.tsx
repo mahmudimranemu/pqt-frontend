@@ -111,16 +111,19 @@ export default function UniversalSearchForm({
             </div>
             <div className='bg-white rounded-lg'>
               <Select
-                value={bedrooms}
-                onValueChange={setBedrooms}>
-                <SelectTrigger className='lg:px-8 py-6 text-lg'>
-                  <SelectValue placeholder='Beds' />
+                value={type}
+                onValueChange={setType}>
+                <SelectTrigger className='px-8 py-6 text-lg'>
+                  <SelectValue placeholder='Type' />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value='1'>1</SelectItem>
-                  <SelectItem value='2'>2</SelectItem>
-                  <SelectItem value='3'>3</SelectItem>
-                  <SelectItem value='4'>4+</SelectItem>
+                  {types.map((t) => (
+                    <SelectItem
+                      key={t}
+                      value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>

@@ -41,6 +41,26 @@ interface WpCity {
   name: string;
 }
 
+export interface BlogPost {
+  id: number;
+  date: string;
+  slug: string;
+  title: { rendered: string };
+  excerpt: { rendered: string };
+  content: { rendered: string };
+  featured_media: number;
+  _embedded?: {
+    "wp:featuredmedia"?: {
+      source_url: string;
+    }[];
+    "author"?: {
+      name: string;
+    }[];
+  };
+  featured_image_url?: string;
+  author_name?: string;
+}
+
 // === 1. Fetch ALL properties (for listing) ===
 export async function fetchProperties() {
   // Caching applied to main list
@@ -144,6 +164,41 @@ export async function fetchPropertyBySlug(slug: string) {
   } else {
     p.property_city = "Unknown City";
   }
+
+  return p;
+}
+
+// === 3. Fetch ALL Blogs ===
+export async function fetchBlogs() {
+  const res = await fetch(`${WP_API_BASE}/posts?_embed&per_page=20`, {
+    next: { revalidate: 3600 },
+  });
+  if (!res.ok) throw new Error("Failed to fetch blogs");
+  const posts: BlogPost[] = await res.json();
+
+  return posts.map((p) => {
+    p.title.rendered = he.decode(p.title.rendered);
+    // Strip HTML tags from excerpt if desired, or keep them if you render HTML
+    // p.excerpt.rendered = he.decode(p.excerpt.rendered); 
+    p.featured_image_url = p._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+    p.author_name = p._embedded?.["author"]?.[0]?.name || "Unknown Author";
+    return p;
+  });
+}
+
+// === 4. Fetch SINGLE Blog by slug ===
+export async function fetchBlogBySlug(slug: string) {
+  const res = await fetch(`${WP_API_BASE}/posts?slug=${slug}&_embed`, {
+    next: { revalidate: 3600 },
+  });
+  if (!res.ok) throw new Error("Blog not found");
+  const posts: BlogPost[] = await res.json();
+  if (posts.length === 0) throw new Error("Blog not found");
+
+  const p = posts[0];
+  p.title.rendered = he.decode(p.title.rendered);
+  p.featured_image_url = p._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  p.author_name = p._embedded?.["author"]?.[0]?.name || "Unknown Author";
 
   return p;
 }
