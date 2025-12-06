@@ -30,7 +30,7 @@ const propertiesLinks = [
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col items-start p-6 w-full border-t [border-top-style:solid] border-[#e1e3ec] bg-[linear-gradient(0deg,rgba(0,20,48,0.95)_0%,rgba(0,20,48,0.95)_100%)]'>
+    <footer className='flex flex-col items-start p-6 mt-20 w-full border-t [border-top-style:solid] border-[#e1e3ec] bg-[linear-gradient(0deg,rgba(0,20,48,0.95)_0%,rgba(0,20,48,0.95)_100%)]'>
       <div className='flex flex-col items-start mx-auto gap-10 py-8 w-7xl'>
         <div className='flex flex-col lg:flex-row items-end mx-auto justify-between pb-10 gap-6 w-7xl border-b [border-bottom-style:solid] border-[#e1e3ec]'>
           <div className='flex flex-col items-start'>

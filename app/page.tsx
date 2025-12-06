@@ -47,7 +47,7 @@ export default async function Home() {
         <CitySection />
         <LatestPropertySection />
         <LatestNewsSection />
-        <ContactCTASection />
+        {/* <ContactCTASection /> */}
       </main>
     </>
   );

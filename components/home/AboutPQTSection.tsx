@@ -15,25 +15,25 @@ const featureCards = [
     icon: <BadgePercent size={32} />,
     title: "Best prices",
     description:
-      "Lorem ipsum dolor sit amet dolor sit dolor siet consectetur dolorsel adipiscing eli mattis sit.",
+      "Find premium properties in Istanbul, Antalya, Bodrum and beyond — at rates far below market value. Whether it’s a luxury apartment in Kadıköy or a seaside villa in Beylikdüzü, we negotiate with developers to secure under-priced deals and outstanding value.",
   },
   {
     icon: <Award size={32} />,
     title: "Client satisfaction",
     description:
-      "Lorem ipsum dolor sit amet dolor sit dolor siet consectetur dolorsel adipiscing eli mattis sit.",
+      "Our clients consistently praise our professionalism, responsiveness and transparency. Many note how smoothly their purchase went — from first contact to handing over the keys — and how well we guided them through legal, financial and citizenship processes.",
   },
   {
     icon: <Building2 />,
     title: "Huge portfolio",
     description:
-      "Lorem ipsum dolor sit amet dolor sit dolor siet consectetur dolorsel adipiscing eli mattis sit.",
+      "With access to a wide range of properties — cozy condos, spacious family apartments, luxury villas and high-end new developments — we help you find a home or investment that matches your lifestyle or financial goals. From 1-bedroom flats to 5+1 villas and full projects, our collection caters to first-time buyers, families and investors alike",
   },
   {
     icon: <UserStar size={32} />,
     title: "Experienced team",
     description:
-      "Lorem ipsum dolor sit amet dolor sit dolor siet consectetur dolorsel adipiscing eli mattis sit.",
+      "Our multilingual and globally- minded team offers deep expertise in Turkish real estate, from market insight to legal support and citizenship applications. We combine local market knowledge with international client care, ensuring that every transaction is safe, seamless, and customized to your needs.",
   },
 ];
 
@@ -78,14 +78,6 @@ export default function AboutPQTSection() {
 
                 <CardDescription>{card.description}</CardDescription>
 
-                <Link
-                  href='#'
-                  className='inline-flex items-center gap-1.5 cursor-pointer bg-transparent border-0 p-0'>
-                  <span className='font-extrabold text-secondary'>
-                    Learn more
-                  </span>
-                  <ArrowRightIcon className='w-[15px] h-[15px] text-secondary' />
-                </Link>
               </CardContent>
             </Card>
           ))}
