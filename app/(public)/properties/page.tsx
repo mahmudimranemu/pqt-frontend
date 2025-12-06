@@ -1,4 +1,5 @@
 // app/properties/page.tsx
+export const dynamic = "force-dynamic";
 import { Suspense } from "react";
 import PropertiesClient from "./PropertiesClient";
 import Loading from "@/components/Loading";
