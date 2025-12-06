@@ -1,10 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import PhoneNumberInput from "../PhoneNumberInput";
 import SimpleContactForm from "./SimpleContactForm";
-import { Contact } from "lucide-react";
 
 export default function HomeCTAForm() {
   return (

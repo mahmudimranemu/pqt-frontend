@@ -8,7 +8,6 @@ import {
 } from "@/lib/contactSchema";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
 import {
   InputGroup,
   InputGroupAddon,
@@ -54,7 +53,7 @@ export default function SimpleContactForm() {
       });
 
       reset();
-    } catch (error) {
+    } catch {
       toast.error("Error submitting form. Please try again.");
     }
   };

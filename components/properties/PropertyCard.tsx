@@ -21,11 +21,8 @@ import { Property } from "@/types/property";
 interface PropertyCardProps {
   property: Property;
 }
-
 export default function PropertyCard({ property }: PropertyCardProps) {
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("en-US").format(price);
-  };
+
 
   const rawHtmlArray = property.property_meta?.overview || [];
   const rawHtml = Array.isArray(rawHtmlArray) ? rawHtmlArray[0] : "";
