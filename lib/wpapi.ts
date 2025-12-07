@@ -1,6 +1,6 @@
 import he from "he";
 
-const WP_API_BASE = "https://propertyquestturkey.com/wp-json/wp/v2";
+const WP_API_BASE = "https://oldsite.propertyquestturkey.com/wp-json/wp/v2/";
 
 // Type definitions (omitted for brevity in analysis, but kept in code)
 interface WpPost {
