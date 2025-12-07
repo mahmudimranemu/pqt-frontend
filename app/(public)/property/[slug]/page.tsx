@@ -1,7 +1,7 @@
 // app/property/[slug]/page.tsx
 
 import { notFound } from "next/navigation";
-import { fetchPropertyBySlug } from "@/lib/wpapi";
+import { fetchPropertyBySlug, WP_API_BASE } from "@/lib/wpapi";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import {
@@ -29,12 +29,13 @@ import FullContactForm from "../../contact/ContactForm";
 import PropertiesCarousel from "@/components/properties/PropertiesCarousel";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export const revalidate = 3600;
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   try {
     const p = await fetchPropertyBySlug(params.slug);
     return {
@@ -48,7 +49,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function PropertyPage({ params }: Props) {
+export default async function PropertyPage(props: Props) {
+  const params = await props.params;
   let property;
   try {
     property = await fetchPropertyBySlug(params.slug);
@@ -65,7 +67,7 @@ export default async function PropertyPage({ params }: Props) {
   if (galleryIds.length > 0) {
     const ids = galleryIds.map((id) => id.trim()).join(",");
     const res = await fetch(
-      `https://propertyquestturkey.com/wp-json/wp/v2/media?include=${ids}&per_page=100`
+      `${WP_API_BASE}/media?include=${ids}&per_page=100`
     );
     if (res.ok) {
       const media: { source_url: string }[] = await res.json();
