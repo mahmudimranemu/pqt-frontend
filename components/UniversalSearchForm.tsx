@@ -86,16 +86,16 @@ export default function UniversalSearchForm({
 
   if (compact) {
     return (
-      <div className='absolute bottom-10 left-1/2 -translate-x-1/2 w-[80%] max-w-2xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl flex flex-col md:flex-row items-center justify-between p-4 space-y-3 md:space-y-0 md:space-x-4'>
+      <div className='absolute bottom-10 left-1/2 -translate-x-1/2 w-[90%] max-w-2xl bg-white/90 backdrop-blur-md shadow-lg rounded-2xl flex flex-col md:flex-row items-center justify-between p-4 space-y-3 md:space-y-0 md:space-x-4'>
         <form
           onSubmit={handleSearch}
-          className='flex flex-col lg:flex-row gap-2 mx-auto'>
+          className='flex flex-col md:flex-row gap-2 mx-auto w-full'>
           <div className='flex gap-2'>
             <div className='bg-white rounded-lg'>
               <Select
                 value={location}
                 onValueChange={setLocation}>
-                <SelectTrigger className='lg:px-8 py-6 text-lg'>
+                <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                   <SelectValue placeholder='Location' />
                 </SelectTrigger>
                 <SelectContent>
@@ -113,7 +113,7 @@ export default function UniversalSearchForm({
               <Select
                 value={type}
                 onValueChange={setType}>
-                <SelectTrigger className='px-8 py-6 text-lg'>
+                <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                   <SelectValue placeholder='Type' />
                 </SelectTrigger>
                 <SelectContent>
@@ -131,7 +131,7 @@ export default function UniversalSearchForm({
               <Select
                 value={minPrice}
                 onValueChange={setMinPrice}>
-                <SelectTrigger className='lg:px-8 py-6 text-lg'>
+                <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                   <SelectValue placeholder='Min Price' />
                 </SelectTrigger>
                 <SelectContent>
@@ -161,11 +161,11 @@ export default function UniversalSearchForm({
             </div>
           </div>
 
-          <div>
+          <div className='w-full md:w-auto'>
             <Button
               type='submit'
               size='sm'
-              className='lg:flex-1 w-full py-6 px-8 text-lg cursor-pointer'
+              className='lg:flex-1 w-full py-3 px-4 text-sm md:py-4 md:px-6 md:text-base lg:py-6 lg:px-8 lg:text-lg cursor-pointer'
               disabled={isLoading}>
               Search
             </Button>
@@ -178,14 +178,14 @@ export default function UniversalSearchForm({
   return (
     <form
       onSubmit={handleSearch}
-      className='bg-zinc-200 py-5 px-36 shadow-md flex w-full justify-center gap-4'>
-      <div className='flex flex-col lg:flex-row gap-1 justify-center items-center'>
+      className='bg-zinc-200 py-4 px-4 sm:px-6 md:px-12 lg:px-36 shadow-md flex w-full justify-center gap-4'>
+      <div className='flex flex-col md:flex-row gap-2 justify-center items-center w-full'>
         <div className='flex gap-1'>
           <div className='bg-white rounded-lg'>
             <Select
               value={location}
               onValueChange={setLocation}>
-              <SelectTrigger className='px-8 py-6 text-lg'>
+              <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                 <SelectValue placeholder='Location' />
               </SelectTrigger>
               <SelectContent>
@@ -204,7 +204,7 @@ export default function UniversalSearchForm({
             <Select
               value={type}
               onValueChange={setType}>
-              <SelectTrigger className='px-8 py-6 text-lg'>
+              <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                 <SelectValue placeholder='Type' />
               </SelectTrigger>
               <SelectContent>
@@ -223,7 +223,7 @@ export default function UniversalSearchForm({
             <Select
               value={bedrooms}
               onValueChange={setBedrooms}>
-              <SelectTrigger className='px-8 py-6 text-lg'>
+              <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                 <SelectValue placeholder='Beds' />
               </SelectTrigger>
               <SelectContent>
@@ -241,7 +241,7 @@ export default function UniversalSearchForm({
             <Select
               value={minPrice}
               onValueChange={setMinPrice}>
-              <SelectTrigger className='px-8 py-6 text-lg'>
+              <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                 <SelectValue placeholder='Min Price' />
               </SelectTrigger>
               <SelectContent>
@@ -274,7 +274,7 @@ export default function UniversalSearchForm({
             <Select
               value={maxPrice}
               onValueChange={setMaxPrice}>
-              <SelectTrigger className='px-8 py-6 text-lg'>
+              <SelectTrigger className='px-3 py-3 text-sm md:px-6 md:py-4 md:text-base lg:px-8 lg:py-6 lg:text-lg'>
                 <SelectValue placeholder='Max Price' />
               </SelectTrigger>
               <SelectContent>
@@ -306,13 +306,13 @@ export default function UniversalSearchForm({
         <div className='flex items-center gap-4'>
           <Button
             type='submit'
-            className='flex-1 py-6 px-8 text-lg cursor-pointer'
+            className='flex-1 py-3 px-4 text-sm md:py-4 md:px-6 md:text-base lg:py-6 lg:px-8 lg:text-lg cursor-pointer'
             disabled={isLoading}>
             {isLoading ? "Searching..." : "Search"}
           </Button>
 
           <Button
-            className='flex-1 py-6 px-8 text-lg cursor-pointer bg-transparent shadow-none p-0 hover:bg-transparent hover:shadow-none hover:underline text-zinc-400 hover:text-zinc-600'
+            className='flex-1 py-3 px-4 text-sm md:py-4 md:px-6 md:text-base lg:py-6 lg:px-8 lg:text-lg cursor-pointer bg-transparent shadow-none p-0 hover:bg-transparent hover:shadow-none hover:underline text-zinc-400 hover:text-zinc-600'
             type='button'
             variant='outline'
             onClick={clearSearch}>

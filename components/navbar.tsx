@@ -19,8 +19,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className='fixed top-10 left-0 px-6 lg:p-0 z-50 w-full'>
-      <div className='max-w-7xl mx-auto flex items-center justify-between px-6 py-3 bg-white/68 backdrop-blur-md border-b border-gray-100/70 rounded-full shadow-2xl'>
+    <nav className='fixed top-4 left-0 right-0 z-50 px-4 sm:px-6'>
+      <div className='max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3 bg-white/80 backdrop-blur-md border border-gray-100/60 rounded-full shadow-2xl'>
         <Link href='/'>
           <Image
             src='/PQT_logo.svg'
@@ -40,31 +40,77 @@ export default function Navbar() {
           ))}
         </div>
         <div className='hidden md:flex items-center space-x-4 text-zinc-900'>
-          <Link href='/search'>
+          <Link
+            href='/search'
+            aria-label='Search'>
             <Search />
           </Link>
           <Link href='/'>Login</Link>
           <Link href='/'>Register</Link>
-
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu button */}
         <button
-          className='md:hidden'
+          className='md:hidden p-2 rounded-md text-zinc-900'
           onClick={() => setOpen(!open)}
-          aria-label='Toggle Menu'>
+          aria-label='Toggle Menu'
+          aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
 
+        {/* Mobile full-screen menu overlay */}
         {open && (
-          <div className='absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-start px-6 py-4 space-y-3 md:hidden'>
-            {menuItems.map((menu, index) => (
+          <div className='fixed inset-0 z-40 bg-white p-6 flex flex-col md:hidden'>
+            <div className='flex items-center justify-between mb-6'>
               <Link
-                key={index}
-                href={menu.href}>
-                {menu.label}
+                href='/'
+                onClick={() => setOpen(false)}>
+                <Image
+                  src='/PQT_logo.svg'
+                  alt='logo'
+                  width={96}
+                  height={34}
+                />
               </Link>
-            ))}
+              <button
+                className='p-2 rounded-md'
+                onClick={() => setOpen(false)}
+                aria-label='Close Menu'>
+                <X />
+              </button>
+            </div>
+
+            <nav className='flex flex-col gap-4 text-lg font-medium'>
+              {menuItems.map((menu, index) => (
+                <Link
+                  key={index}
+                  href={menu.href}
+                  onClick={() => setOpen(false)}
+                  className='text-zinc-900'>
+                  {menu.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className='mt-6 border-t border-gray-200 pt-6 flex flex-col gap-4'>
+              <Link
+                href='/search'
+                onClick={() => setOpen(false)}
+                className='flex items-center gap-2'>
+                <Search /> <span>Search</span>
+              </Link>
+
+              <Link
+                href='/'
+                onClick={() => setOpen(false)}>
+                Login
+              </Link>
+              <Link
+                href='/'
+                onClick={() => setOpen(false)}>
+                Register
+              </Link>
+            </div>
           </div>
         )}
       </div>

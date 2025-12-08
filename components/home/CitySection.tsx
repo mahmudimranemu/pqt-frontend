@@ -44,75 +44,78 @@ export function CitySection() {
   const smallCityCards = cities.slice(1);
 
   return (
-    <section className='flex flex-col w-full max-w-[1080px] mx-auto items-center justify-center gap-[30px] px-0 py-20'>
-      <div className='flex items-center justify-between w-full gap-[22px]'>
+    <section className='flex flex-col w-full max-w-screen-xl mx-auto items-center justify-center gap-8 px-4 py-12 md:py-20'>
+      <div className='flex flex-col md:flex-row items-start justify-between w-full gap-6 md:gap-8'>
         <Card
-          className='w-[540px] h-[440px] p-0 rounded-lg overflow-hidden border-0 shadow-none cursor-pointer hover:opacity-90 transition-opacity'
+          className='w-full md:w-[540px] h-64 sm:h-80 md:h-[440px] p-0 rounded-lg overflow-hidden border-0 shadow-none cursor-pointer hover:opacity-90 transition-opacity'
           style={{
             backgroundImage: `url(${largeCityCard.image})`,
             backgroundSize: "cover",
             backgroundPosition: "50% 50%",
           }}>
           <CardContent className='flex gap-2.5 w-full h-full rounded-lg overflow-hidden bg-[linear-gradient(180deg,rgba(7,11,27,0)_0%,rgba(7,11,27,1)_100%)] flex-col justify-end p-0'>
-            <div className='flex flex-col items-start w-full px-10 pb-14 pt-0'>
-              <h3 className='font-extrabold text-2xl tracking-tighter text-white'>
+            <div className='flex flex-col items-start w-full px-6 sm:px-8 pb-12 pt-0'>
+              <h3 className='font-extrabold text-xl sm:text-2xl md:text-2xl tracking-tighter text-white'>
                 {largeCityCard.name}
               </h3>
 
-              <p className='text-white text-sm'>{largeCityCard.description}</p>
+              <p className='text-white text-xs sm:text-sm md:text-sm'>
+                {largeCityCard.description}
+              </p>
 
               <Link
                 href='#'
-                className='inline-flex items-center gap-1.5 mt-4 text-white'>
-                <span className='font-medium'>{largeCityCard.link}</span>
-                <ArrowRightIcon className='w-[15px] h-[15px] text-white' />
+                className='inline-flex items-center gap-2 mt-4 text-white'>
+                <span className='font-medium text-sm'>
+                  {largeCityCard.link}
+                </span>
+                <ArrowRightIcon className='w-4 h-4 text-white' />
               </Link>
             </div>
           </CardContent>
         </Card>
-
-        <div className='inline-flex flex-col items-center gap-6'>
-          <h2 className="w-fit font-normal text-4xl text-center leading-9 mt-[-1.00px] [font-family:'Inter',Helvetica]">
-            <span className='font-extrabold text-[#8c0008] tracking-tighter leading-10'>
+        <div className='flex flex-col items-center md:items-start gap-6 md:pl-6 lg:pl-10 w-full md:w-1/2'>
+          <h2 className="w-full md:w-auto font-normal text-2xl sm:text-3xl md:text-4xl text-center md:text-left leading-8 md:leading-9 [font-family:'Inter',Helvetica]">
+            <span className='font-extrabold text-[#8c0008] tracking-tighter leading-8 md:leading-10 block'>
               Discover the Best Cities
-              <br />
             </span>
-            <span className="[font-family:'Playfair_Display',Helvetica] font-extrabold text-[#8c0008] tracking-[-0.39px] leading-10">
+            <span className="[font-family:'Playfair_Display',Helvetica] font-extrabold text-[#8c0008] tracking-[-0.39px] leading-8 md:leading-10 block">
               to Live &amp; Invest in Turkey
             </span>
           </h2>
 
-          <p className='w-[500px] text-neutral-700 text-[length:var(--paragraph-medium-regular-font-size)] text-center leading-[var(--paragraph-medium-regular-line-height)] font-paragraph-medium-regular font-[number:var(--paragraph-medium-regular-font-weight)] tracking-[var(--paragraph-medium-regular-letter-spacing)] [font-style:var(--paragraph-medium-regular-font-style)]'>
+          <p className='w-full md:w-[500px] text-neutral-700 text-sm md:text-base text-center md:text-left leading-relaxed'>
             Each city offers a unique blend of culture, lifestyle, and
             opportunities. Explore and choose the one that feels like home.
           </p>
         </div>
       </div>
-
-      <div className='flex items-center justify-between w-full gap-[30px]'>
+      <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
         {smallCityCards.map((city, index) => (
           <Card
             key={index}
-            className='w-[340px] h-[440px] p-0 rounded-lg overflow-hidden border-0 shadow-none cursor-pointer hover:opacity-90 transition-opacity'
+            className='w-full h-64 sm:h-80 md:h-[440px] p-0 rounded-lg overflow-hidden border-0 shadow-none cursor-pointer hover:opacity-90 transition-opacity'
             style={{
               backgroundImage: `url(${city.image})`,
               backgroundSize: "cover",
               backgroundPosition: "50% 50%",
             }}>
             <CardContent className='flex gap-2.5 h-full w-full rounded-lg overflow-hidden bg-[linear-gradient(180deg,rgba(7,11,27,0)_0%,rgba(7,11,27,1)_100%)] flex-col justify-end p-0'>
-              <div className='flex flex-col items-start w-full px-10 pb-14 pt-0'>
-                <h3 className='font-extrabold text-2xl tracking-tighter text-white'>
+              <div className='flex flex-col items-start w-full px-6 sm:px-8 pb-12 pt-0'>
+                <h3 className='font-extrabold text-xl sm:text-2xl tracking-tighter text-white'>
                   {city.name}
                 </h3>
 
-                <p className='text-white text-sm'>{city.description}</p>
+                <p className='text-white text-xs sm:text-sm'>
+                  {city.description}
+                </p>
 
-                <div className='inline-flex items-center gap-1.5 mt-4'>
+                <div className='inline-flex items-center gap-2 mt-4'>
                   <Link
                     href='#'
-                    className='inline-flex items-center gap-1.5 mt-4 text-white'>
-                    <span className='font-medium'>{city.link}</span>
-                    <ArrowRightIcon className='w-[15px] h-[15px] text-white' />
+                    className='inline-flex items-center gap-2 mt-4 text-white'>
+                    <span className='font-medium text-sm'>{city.link}</span>
+                    <ArrowRightIcon className='w-4 h-4 text-white' />
                   </Link>
                 </div>
               </div>
