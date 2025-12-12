@@ -47,7 +47,7 @@ export function CitySection() {
     <section className='flex flex-col w-full max-w-screen-xl mx-auto items-center justify-center gap-8 px-4 py-12 md:py-20'>
       <div className='flex flex-col md:flex-row items-start justify-between w-full gap-6 md:gap-8'>
         <Card
-          className='w-full md:w-[540px] h-64 sm:h-80 md:h-[440px] p-0 rounded-lg overflow-hidden border-0 shadow-none cursor-pointer hover:opacity-90 transition-opacity'
+          className='w-full lg:w-[540px] h-64 sm:h-80 md:h-[440px] p-0 rounded-lg overflow-hidden border-0 shadow-none cursor-pointer hover:opacity-90 transition-opacity'
           style={{
             backgroundImage: `url(${largeCityCard.image})`,
             backgroundSize: "cover",
@@ -84,7 +84,7 @@ export function CitySection() {
             </span>
           </h2>
 
-          <p className='w-full md:w-[500px] text-neutral-700 text-sm md:text-base text-center md:text-left leading-relaxed'>
+          <p className='w-full lg:w-[500px] text-neutral-700 text-sm md:text-base text-center md:text-left leading-relaxed'>
             Each city offers a unique blend of culture, lifestyle, and
             opportunities. Explore and choose the one that feels like home.
           </p>
